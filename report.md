@@ -86,7 +86,7 @@ ssid=hostapd-wpe
 channel=1
 ```
 
-On peut donc choisir l'interface, le ssid et le channel.
+On peut donc choisir l'interface, le ssid et le channel. Ici les modifications nécessaires ont été l'interface, et il faudrait aussi modifier le nom du ssid pour qu'il colle au nom du réseau dont on veut crée un `evil twin`. Ici de manière partique nous avons pas changer le ssid.
 
 5. Quel type de hash doit-on indiquer à john pour craquer le handshake ?
 
@@ -110,7 +110,7 @@ mschapv2: Thu May 17 07:04:03 2018
 	 jtr NETNTLM:	getting_hacked:$NETNTLM$7a46199404657c58$742e95a403a34426286244f1cb45b2a197e6d59ff370a12c
 ```
 
-On lui donne un hahs de type `netntlm`, ici `getting_hacked:$NETNTLM$7a46199404657c58$742e95a403a34426286244f1cb45b2a197e6d59ff370a12c`:
+On lui donne un hahs de type `netntlm`, ici `getting_hacked:$NETNTLM$7a46199404657c58$742e95a403a34426286244f1cb45b2a197e6d59ff370a12c` :
 ```
 john --format=netntlm hash.txt                                                                                 
 Loaded 1 password hash (netntlm, NTLMv1 C/R [MD4 DES (ESS MD5) 128/128 AVX 12x])
@@ -125,9 +125,9 @@ Session completed
 Le mot de passe est donc : `mdpasse`
 
 6. Quelles méthodes d’authentification sont supportées par hostapd-wpe ?
-* EAP-FAST/MSCHAPv2 (Phase 0)
-* PEAP/MSCHAPv2
-* EAP-TTLS/MSCHAPv2
-* EAP-TTLS/MSCHAP
-* EAP-TTLS/CHAP
-* EAP-TTLS/PA
+  * EAP-FAST/MSCHAPv2 (Phase 0)
+  * PEAP/MSCHAPv2
+  * EAP-TTLS/MSCHAPv2
+  * EAP-TTLS/MSCHAP
+  * EAP-TTLS/CHAP
+  * EAP-TTLS/PA
