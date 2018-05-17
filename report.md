@@ -65,5 +65,13 @@ Vous pouvez fairececi avec airodump-ng, par exemple
 ## 2. Attaque WPA Entreprise
 
 4. Quelles modifications sont nécessaires dans la configuration de hostapd-wpe pour cette attaque ?
+> Choisir le SSID souhaité
 5. Quel type de hash doit-on indiquer à john pour craquer le handshake ?
+> NTLM ?
 6. Quelles méthodes d’authentification sont supportées par hostapd-wpe ?
+* EAP-FAST/MSCHAPv2 (Phase 0)
+* PEAP/MSCHAPv2
+* EAP-TTLS/MSCHAPv2
+* EAP-TTLS/MSCHAP
+* EAP-TTLS/CHAP
+* EAP-TTLS/PA
