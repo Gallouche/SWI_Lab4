@@ -19,5 +19,6 @@ Authors : Emmanuel Schmid and Théo Gallandat
 ## 2. Attaque WPA Entreprise
 
 4. Quelles modifications sont nécessaires dans la configuration de hostapd-wpe pour cette attaque ?
+
 5. Quel type de hash doit-on indiquer à john pour craquer le handshake ?
 6. Quelles méthodes d’authentification sont supportées par hostapd-wpe ?
