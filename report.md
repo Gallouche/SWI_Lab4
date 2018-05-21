@@ -29,17 +29,26 @@ Vous pouvez fairececi avec airodump-ng, par exemple
 ![alt text](./images/Identity.png)
 
 ### Phase hello
-![alt text](./images/phaseHello.png)
-* Version TLS
+#### Client
+![alt text](./images/ClientHello.png)
+> * Version TLS 
+* Suites cryptographiques et méthodes de compression proposées par le client et acceptées par l’AP
+* Nonces
+* Session ID
+
+#### Serveur
+![alt text](./images/srvHello.png)
+
+> * Version TLS
 * Suites cryptographiques et méthodes de compression proposées par le client et acceptées par l’AP
 * Nonces
 * Session ID
 
 ### Phase de transmission de certificats
-![alt text](./images/PhaseCertif.png)
 * Certificat serveur
-![alt text](./images/ChangeCipherSpec.png)
+![alt text](./images/PhaseCertif.png)
 * Change cipher spec
+![alt text](./images/ChangeCipherSpec.png)
 
 ### Authentification interne et transmission de la clé WPA 
 (échange chiffré, vucomme « Application data »)
@@ -50,17 +59,25 @@ Vous pouvez fairececi avec airodump-ng, par exemple
 
 ### Questions
 
-1. Quelle ou quelles méthode(s) d’authentification est/sont proposé(s) au client ? EAP-TLS, EAP-PEAP
+1. Quelle ou quelles méthode(s) d’authentification est/sont proposé(s) au client ? 
+> * EAP-TLS
+* EAP-PEAP
 
-2. Quelle méthode d’authentification est utilisée ? EAP-PEAP
+2. Quelle méthode d’authentification est utilisée ?
+> * EAP-PEAP
 
 3. Lors de l’échange de certificats entre le serveur d’authentification et le client :
 
-  a. Le serveur envoie un certificat au client ?
+  * Le serveur envoie un certificat au client ? Oui
+![alt text](./images/srvCertif.png)
 
-  b. Le client envoie un certificat au serveur ?
 
-  c. Les deux s’échangent des certificats ?
+  * Le client envoie un certificat au serveur ? Non
+![alt text](./images/clientCertif.png)
+
+  c. Les deux s’échangent des certificats ? Non
+
+
 
 ## 2. Attaque WPA Entreprise
 
