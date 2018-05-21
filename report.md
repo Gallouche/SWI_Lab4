@@ -1,48 +1,72 @@
 # Sécurité des réseaux sans fil - Laboratoire WPA2 Entreprise
 
-
-Authors : Emmanuel Schmid and Théo Gallandat
+## Authors
+* Emmanuel Schmid
+* Théo Gallandat
+* Fabien Franchini
 
 ## 1. Capture et analyse d’une authentification WPA Entreprise
 
-### Comparer votre capture au processus d’authentification expliqué en classe
+Dans cette première partie, nous allons capturer une connexion WPA Entreprise au réseau de
+l’école avec Wireshark et fournir des captures d’écran indiquant dans chaque capture les
+données demandées.
 
-
-Identifier le canal utilisé par l’AP dont la puissance est la plus élevée.
-Vous pouvez fairececi avec airodump-ng, par exemple
+### Identifier le canal utilisé par l’AP dont la puissance est la plus élevée.
+Vous pouvez fairececi avec airodump-ng, par exemple. Channel 1
 
 
 ### Requête et réponse d’authentification système ouvert
+![alt text](./images/AuthOpen.png)
+Le schéma ci-dessus représente une authentification système ouverte. On retrouve :   
+
+#### La requête
 ![alt text](./images/Authen1.png)
+#### La réponse
 ![alt text](./images/Authen2.png)
 
 ### Requête et réponse d’association
+![alt text](./images/AssocSchema.png)
+Le schéma ci-dessus représente une association système ouverte. On retrouve :   
+### La requête
 ![alt text](./images/Assoc1.png)
+### La réponse
 ![alt text](./images/Assoc2.png)
 
-### Sélection de la méthode d’authentification
-![alt text](./images/methoAuthNego.png)
+
+### Phase d’initialisation
+![alt text](./images/phaseInit.png)
+Le schéma ci-dessous repésente la phase d'initialisation
+
+#### Sélection de la méthode d’authentification
+Le protocole d’authentification est PEAP comme le montre la capture suivante :
 ![alt text](./images/methodeAuthSelect.png)
 
-### Phase d’initiation.
-> Arrivez-vous à voir l’identité du client ?
+#### Arrivez-vous à voir l’identité du client ?
+> Oui, se référer au screen suivant.
+
 ![alt text](./images/Identity.png)
 
 ### Phase hello
+![alt text](./images/phaseHelloSchema.png)
+Le schéma ci-dessous représente la **phase Hello** entre le client et l'AP.
 #### Client
 ![alt text](./images/ClientHello.png)
-> * Version TLS 
-* Suites cryptographiques et méthodes de compression proposées par le client et acceptées par l’AP
-* Nonces
-* Session ID
+> Dans l'ordre des encadrés rouges sur le screen ci-dessus, on retrouve : 
+* Version TLS
+* Nonce
+* Suites cryptographiques proposées par le client 
+* Méthodes de compression proposées par le client : null
 
 #### Serveur
 ![alt text](./images/srvHello.png)
 
-> * Version TLS
-* Suites cryptographiques et méthodes de compression proposées par le client et acceptées par l’AP
-* Nonces
+> Dans l'ordre des encadrés rouges sur le screen ci-dessus, on retrouve : 
+* Version TLS
+* Nonce
 * Session ID
+* Suites cryptographiques acceptées par l’AP
+* Méthodes de compression acceptées par l'AP : null
+
 
 ### Phase de transmission de certificats
 * Certificat serveur
@@ -55,6 +79,9 @@ Vous pouvez fairececi avec airodump-ng, par exemple
 ![alt text](./images/AppData.png)
 
 ### 4 way hadshake
+Le schéma ci-dessous représente le **4 way hadshake**.
+![alt text](./images/4wayhandshake.png)
+Le screen ci-dessous repésente le 4 way hadshake capturé.
 ![alt text](./images/handshakes.png)
 
 ### Questions
