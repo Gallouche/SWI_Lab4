@@ -12,8 +12,7 @@ l’école avec Wireshark et fournir des captures d’écran indiquant dans chaq
 données demandées.
 
 ### Identifier le canal utilisé par l’AP dont la puissance est la plus élevée.
-Vous pouvez fairececi avec airodump-ng, par exemple. Channel 1
-
+Vous pouvez fairececi avec airodump-ng. Le channel 1 est le canal dont la puissance est la plus élevée !
 
 ### Requête et réponse d’authentification système ouvert
 ![alt text](./images/AuthOpen.png)
